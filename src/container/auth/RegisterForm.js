@@ -10,7 +10,7 @@ const RegisterForm = () => {
     auth: auth.auth,
     authError: auth.authError,
   }));
-
+  console.log({ form, auth, authError });
   const onChange = (e) => {
     const { value, name } = e.target;
     dispatch(
@@ -26,10 +26,11 @@ const RegisterForm = () => {
     e.preventDefault();
     const { username, password, passwordConfirm } = form;
     if (password != passwordConfirm) {
+      console.log('비밀번호 !-= 비밀번호 확인');
       //오류처리
       return;
     }
-    dispatch(register({ username, passwordConfirm }));
+    dispatch(register({ username, password }));
   };
   useEffect(() => {
     dispatch(initializeForm('register'));

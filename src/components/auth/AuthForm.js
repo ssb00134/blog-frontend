@@ -55,7 +55,6 @@ const ButtonWithMarginTop = styled(Button)`
 `;
 
 const textMap = {
-<<<<<<< HEAD
   login: '로그인',
   register: '회원가입',
 };
@@ -69,11 +68,11 @@ const ErrorMessage = styled.div`
   font-size: 0.875rem;
   margin-top: 1rem;
 `;
-=======
+
   login : '로그인',
   register : '회원가입'
 }
->>>>>>> eb990b350175a89f94ce336362c2869c5efef5a9
+
 
 const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
   const text = textMap[type];
@@ -106,11 +105,11 @@ const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
             value={form.passwordConfirm}
           />
         )}
-<<<<<<< HEAD
+
         {error && <ErrorMessage>{error}</ErrorMessage>}
-=======
+
        
->>>>>>> eb990b350175a89f94ce336362c2869c5efef5a9
+
         <ButtonWithMarginTop cyan fullWidth style={{ marginTop: '1rem' }}>
           {text}
         </ButtonWithMarginTop>

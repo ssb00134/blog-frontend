@@ -20,7 +20,6 @@ const [LOGIN, LOGIN_SUCCESS, LOGIN_FAILURE] = createRequestActionTypes(
 export const changeField = createAction(
   CHANGE_FIELD,
   ({ form, key, value }) => ({
-<<<<<<< HEAD
     form, // register , login
     key, // username, password, passwordConfirm
     value, // 실제 바꾸려는 값
@@ -43,15 +42,6 @@ export function* authSaga() {
   yield takeLatest(REGISTER, registerSaga);
   yield takeLatest(LOGIN, loginSaga);
 }
-=======
-    form,
-    key,
-    value,
-  }),
-);
-
-export const initializeForm = createAction(INITIALIZE_FORM, (form) => form);
->>>>>>> eb990b350175a89f94ce336362c2869c5efef5a9
 
 const initialState = {
   register: {
@@ -63,11 +53,8 @@ const initialState = {
     username: '',
     password: '',
   },
-<<<<<<< HEAD
   auth: null,
   authError: null,
-=======
->>>>>>> eb990b350175a89f94ce336362c2869c5efef5a9
 };
 
 const auth = handleActions(
@@ -81,7 +68,6 @@ const auth = handleActions(
       [form]: initialState[form],
       authError: null, // 폼 전환 시 회원 인증 에러 초기화
     }),
-<<<<<<< HEAD
     // 회원가입 성공
     [REGISTER_SUCCESS]: (state, { payload: auth }) => ({
       ...state,
@@ -104,8 +90,6 @@ const auth = handleActions(
       ...state,
       authError: error,
     }),
-=======
->>>>>>> eb990b350175a89f94ce336362c2869c5efef5a9
   },
   initialState,
 );

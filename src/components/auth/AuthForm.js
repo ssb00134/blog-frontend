@@ -69,11 +69,6 @@ const ErrorMessage = styled.div`
   margin-top: 1rem;
 `;
 
-  login : '로그인',
-  register : '회원가입'
-}
-
-
 const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
   const text = textMap[type];
   return (
@@ -105,11 +100,7 @@ const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
             value={form.passwordConfirm}
           />
         )}
-
         {error && <ErrorMessage>{error}</ErrorMessage>}
-
-       
-
         <ButtonWithMarginTop cyan fullWidth style={{ marginTop: '1rem' }}>
           {text}
         </ButtonWithMarginTop>

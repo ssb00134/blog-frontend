@@ -10,7 +10,7 @@ const RegisterForm = () => {
     auth: auth.auth,
     authError: auth.authError,
   }));
-  console.log({ form, auth, authError });
+
   const onChange = (e) => {
     const { value, name } = e.target;
     dispatch(

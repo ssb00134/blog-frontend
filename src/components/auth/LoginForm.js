@@ -7,11 +7,10 @@ import AuthForm from '../../components/auth/AuthForm';
 const LoginForm = ({ history }) => {
   const [error, setError] = useState(null);
   const dispatch = useDispatch();
-  const { form, auth, authError, user } = useSelector(({ auth, user }) => ({
+  const { form, auth, authError } = useSelector(({ auth }) => ({
     form: auth.login,
     auth: auth.auth,
     authError: auth.authError,
-    user: user.user,
   }));
   // 인풋 변경 이벤트 핸들러
   const onChange = (e) => {
@@ -48,17 +47,6 @@ const LoginForm = ({ history }) => {
       console.log('로그인 성공');
     }
   }, [auth, authError, dispatch]);
-
-  useEffect(() => {
-    if (user) {
-      history.push('/');
-      try {
-        localStorage.setItem('user', JSON.stringify(user));
-      } catch (e) {
-        console.log('localStorage is not working');
-      }
-    }
-  }, [history, user]);
 
   return (
     <AuthForm

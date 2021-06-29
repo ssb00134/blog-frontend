@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import palette from '../../lib/styles/palette';
+import { Link } from 'react-router-dom';
 
 const StyledButton = styled.button`
   border: none;
@@ -36,5 +37,19 @@ const StyledButton = styled.button`
     `}
 `;
 
-const Button = (props) => <StyledButton {...props} />;
+
+
+const Button = ({ to, history, ...rest }) => {
+  const onClick = (e) => {
+    if (to) {
+      console.log('history: ', history);
+      history.push(to);
+    }
+    // if (rest.onClick) {
+    //   rest.onClick(e);
+    // }
+  };
+
+  return <StyledButton {...rest} onClick={onClick} />;
+};
 export default Button;
